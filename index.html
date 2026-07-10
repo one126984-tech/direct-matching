@@ -328,18 +328,18 @@
 
 
 <script>
-  // 1. 수파베이스 설정 완료 (주소 끝의 /rest/v1/을 지우고, ANON_KEY를 알맞게 매칭했습니다)
-  // *주의: sb_secret_...로 시작하는 비밀키는 여기에 넣으면 절대로 안 됩니다!
+  // 1. 수파베이스 설정 (변수 이름을 supabaseClient로 변경하여 충돌을 막았습니다)
   const SUPABASE_URL = 'https://jtoujsntxxqxsynsanxz.supabase.co'; 
   const SUPABASE_ANON_KEY = 'sb_publishable_BQmz1lOWrsYqkePwEZhiBg_mM8CARh6';
 
   // 2. 수파베이스 클라이언트 연동 초기화
-  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  // (앞의 const supabase 부분을 supabaseClient로 수정)
+  const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-  // 3. 연동 테스트 함수 (브라우저 F12 개발자 도구 콘솔창에서 확인 가능)
+  // 3. 연동 테스트 함수
   async function testDatabaseConnection() {
-    // 수파베이스 데이터베이스 연동 확인용 테스트 (아무 동작 없이 연결만 체크)
-    const { data, error } = await supabase.from('users').select('*').limit(1);
+    // 수파베이스 데이터베이스 연동 확인용 테스트 (supabaseClient 변수 사용)
+    const { data, error } = await supabaseClient.from('users').select('*').limit(1);
     
     if (error) {
       console.log('수파베이스 연동 에러 발생:', error.message);
@@ -351,6 +351,5 @@
   // 연결 확인 실행
   testDatabaseConnection();
 </script>
-
 </body>
 </html>

@@ -56,68 +56,25 @@
     .card-front:hover, .card-mid:hover, .card-back:hover { transform: translateY(-8px); }
   }
   #mobileMenu { transition: max-height .3s ease, opacity .25s ease; }
-
-  /* ===== Section headline scale ===== */
   .section-headline { font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; }
-
-  /* ===== Gradient accent text (dark sections) ===== */
-  .grad-text {
-    background: linear-gradient(90deg, #4A7DFF, #FF7AAE);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-
-  /* ===== Giant watermark numbers ===== */
-  .watermark-num {
-    position: absolute;
-    font-weight: 900;
-    line-height: 1;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-    font-size: 460px;
-    letter-spacing: -0.05em;
-  }
+  .grad-text { background: linear-gradient(90deg, #4A7DFF, #FF7AAE); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .watermark-num { position: absolute; font-weight: 900; line-height: 1; pointer-events: none; user-select: none; z-index: 0; font-size: 460px; letter-spacing: -0.05em; }
   @media (max-width: 768px) { .watermark-num { font-size: 200px; } }
-
-  /* ===== Diagonal divider strips ===== */
   .diag-divider { position: relative; width: 100%; height: 80px; overflow: hidden; }
   @media (max-width: 768px) { .diag-divider { height: 40px; } }
-
-  /* ===== Ripple sweep (dark section entrance) ===== */
   @keyframes rippleSweep {
     0% { transform: translateX(-100%); opacity: 0; }
     35% { opacity: .55; }
     100% { transform: translateX(120%); opacity: 0; }
   }
-  .ripple-overlay {
-    position: absolute; inset: 0; pointer-events: none; z-index: 0;
-    background: linear-gradient(90deg, transparent, rgba(74,125,255,0.30), rgba(255,122,174,0.24), transparent);
-    transform: translateX(-100%);
-    width: 60%;
-  }
+  .ripple-overlay { position: absolute; inset: 0; pointer-events: none; z-index: 0; background: linear-gradient(90deg, transparent, rgba(74,125,255,0.30), rgba(255,122,174,0.24), transparent); transform: translateX(-100%); width: 60%; }
   .ripple-play .ripple-overlay { animation: rippleSweep 1.5s ease-out forwards; }
-
-  /* ===== CTA pulse ring ===== */
-  @keyframes pulseRingBlue {
-    0% { box-shadow: 0 0 0 0 rgba(74,125,255,0.55); }
-    70% { box-shadow: 0 0 0 20px rgba(74,125,255,0); }
-    100% { box-shadow: 0 0 0 0 rgba(74,125,255,0); }
-  }
-  @keyframes pulseRingPink {
-    0% { box-shadow: 0 0 0 0 rgba(255,122,174,0.55); }
-    70% { box-shadow: 0 0 0 20px rgba(255,122,174,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,122,174,0); }
-  }
-  @keyframes pulseRingWhite {
-    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.45); }
-    70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); }
-    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
-  }
+  @keyframes pulseRingBlue { 0% { box-shadow: 0 0 0 0 rgba(74,125,255,0.55); } 70% { box-shadow: 0 0 0 20px rgba(74,125,255,0); } 100% { box-shadow: 0 0 0 0 rgba(74,125,255,0); } }
+  @keyframes pulseRingPink { 0% { box-shadow: 0 0 0 0 rgba(255,122,174,0.55); } 70% { box-shadow: 0 0 0 20px rgba(255,122,174,0); } 100% { box-shadow: 0 0 0 0 rgba(255,122,174,0); } }
+  @keyframes pulseRingWhite { 0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.45); } 70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); } 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); } }
   .btn-pulse-blue { animation: pulseRingBlue 2.5s ease-out infinite; }
   .btn-pulse-pink { animation: pulseRingPink 2.5s ease-out infinite; }
   .btn-pulse-white { animation: pulseRingWhite 2.5s ease-out infinite; }
-
-  /* ===== Stagger reveal ===== */
   .reveal-stagger { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
   .reveal-stagger.in-view { opacity: 1; transform: translateY(0); }
 </style>
@@ -132,7 +89,6 @@
       <span class="text-2xl md:text-[26px] font-black text-cobalt tracking-tight">다이렉트 매칭</span>
       <span class="w-2 h-2 rounded-full bg-pinkAccent mb-3"></span>
     </a>
-
     <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium text-ink/80">
       <a href="#" class="hover:text-cobalt transition-colors">서비스</a>
       <span class="text-ink/25">·</span>
@@ -140,21 +96,18 @@
       <span class="text-ink/25">·</span>
       <a href="#" class="hover:text-cobalt transition-colors">고객지원</a>
     </nav>
-
     <div class="hidden lg:flex items-center gap-5 shrink-0">
       <a href="#" class="text-[15px] font-medium text-ink/70 hover:text-cobalt transition-colors">로그인</a>
-      <a href="#" class="inline-flex items-center justify-center px-6 h-11 rounded-full bg-cobalt text-white text-[15px] font-bold hover:bg-pinkAccent transition-colors duration-200 shadow-[0_8px_20px_-6px_rgba(74,125,255,0.55)]">
+      <a href="#" class="btn-open-modal inline-flex items-center justify-center px-6 h-11 rounded-full bg-cobalt text-white text-[15px] font-bold hover:bg-pinkAccent transition-colors duration-200 shadow-[0_8px_20px_-6px_rgba(74,125,255,0.55)]">
         무료 시작하기
       </a>
     </div>
-
     <button id="menuBtn" class="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-[5px]" aria-label="메뉴 열기">
       <span class="block w-6 h-[2px] bg-ink rounded-full"></span>
       <span class="block w-6 h-[2px] bg-ink rounded-full"></span>
       <span class="block w-6 h-[2px] bg-ink rounded-full"></span>
     </button>
   </div>
-
   <div id="mobileMenu" class="lg:hidden max-h-0 overflow-hidden opacity-0 bg-white border-t border-[#DCE9FF]">
     <nav class="flex flex-col px-6 py-4 gap-4 text-[15px] font-medium text-ink/80">
       <a href="#" class="hover:text-cobalt transition-colors">서비스</a>
@@ -162,7 +115,7 @@
       <a href="#" class="hover:text-cobalt transition-colors">고객지원</a>
       <div class="h-px bg-[#DCE9FF] my-1"></div>
       <a href="#" class="text-ink/70 hover:text-cobalt transition-colors">로그인</a>
-      <a href="#" class="inline-flex items-center justify-center px-6 h-11 rounded-full bg-cobalt text-white font-bold hover:bg-pinkAccent transition-colors duration-200">무료 시작하기</a>
+      <a href="#" class="btn-open-modal inline-flex items-center justify-center px-6 h-11 rounded-full bg-cobalt text-white font-bold hover:bg-pinkAccent transition-colors duration-200">무료 시작하기</a>
     </nav>
   </div>
 </header>
@@ -172,219 +125,193 @@
     <svg class="absolute float-slow" style="left:6%; top:14%;" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#4A7DFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><path d="M14.7 6.3a4 4 0 0 0-5.4 4.6L3 17.2V21h3.8l6.3-6.3a4 4 0 0 0 4.6-5.4l-2.6 2.6-2.1-2.1 2.7-2.7Z"/></svg>
     <svg class="absolute float-slower float-delay" style="left:37%; top:9%;" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4A7DFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/></svg>
     <svg class="absolute float-slow" style="left:84%; top:12%;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4A7DFF" stroke-width="1.6" opacity="0.35"><circle cx="12" cy="12" r="8"/></svg>
-    <svg class="absolute float-slower" style="left:91%; top:16%;" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FF7AAE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><path d="M14.7 6.3a4 4 0 0 0-5.4 4.6L3 17.2V21h3.8l6.3-6.3a4 4 0 0 0 4.6-5.4l-2.6 2.6-2.1-2.1 2.7-2.7Z"/></svg>
-    <svg class="absolute float-slow float-delay" style="left:46%; top:56%;" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FF7AAE" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><path d="M4 16v-3.2a2 2 0 0 1 1.3-1.9l1.6-.6 1.4-3a2 2 0 0 1 1.8-1.1h3.8a2 2 0 0 1 1.8 1.1l1.4 3 1.6.6A2 2 0 0 1 20 12.8V16"/><path d="M4 16h16v2a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1H7.5v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2Z"/><circle cx="7.5" cy="16" r="1.4"/><circle cx="16.5" cy="16" r="1.4"/></svg>
-    <svg class="absolute float-slower" style="left:87%; top:71%;" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#4A7DFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/></svg>
-    <svg class="absolute float-slow" style="left:94%; top:63%;" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#4A7DFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"><path d="M4 16v-3.2a2 2 0 0 1 1.3-1.9l1.6-.6 1.4-3a2 2 0 0 1 1.8-1.1h3.8a2 2 0 0 1 1.8 1.1l1.4 3 1.6.6A2 2 0 0 1 20 12.8V16"/><path d="M4 16h16v2a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1H7.5v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2Z"/><circle cx="7.5" cy="16" r="1.4"/><circle cx="16.5" cy="16" r="1.4"/></svg>
     <span class="absolute rounded-full bg-cobalt" style="left:17%; top:14%; width:8px; height:8px; opacity:0.5;"></span>
     <span class="absolute rounded-full bg-pinkAccent" style="left:26%; top:11%; width:7px; height:7px; opacity:0.45;"></span>
-    <span class="absolute rounded-full bg-cobalt" style="left:45%; top:49%; width:7px; height:7px; opacity:0.45;"></span>
-    <span class="absolute rounded-full bg-pinkAccent" style="left:51%; top:71%; width:8px; height:8px; opacity:0.45;"></span>
-    <span class="absolute rounded-full bg-pinkAccent" style="left:83%; top:67%; width:7px; height:7px; opacity:0.45;"></span>
   </div>
 
   <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-8 lg:px-10">
     <div class="flex flex-col lg:flex-row items-center lg:items-start gap-16 lg:gap-8">
       <div class="w-full lg:w-[55%] text-center lg:text-left">
         <h1 class="font-black text-ink leading-[1.15] text-[38px] sm:text-[46px] md:text-[58px] lg:text-[76px] tracking-tight">
-          <span class="relative inline-block">
-            내 근처
-            <svg class="absolute left-0 -bottom-1 w-full h-3" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2 8 Q 25 2, 50 8 T 100 8 T 150 8 T 198 8" fill="none" stroke="#FF7AAE" stroke-width="4" stroke-linecap="round"/></svg>
-          </span><br>
-          <span class="inline-block bg-cobalt text-white px-3 md:px-4 rounded-lg">전문가가</span><br>
-          직접 찾아옵니다.
+          <span class="relative inline-block">내 근처<svg class="absolute left-0 -bottom-1 w-full h-3" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2 8 Q 25 2, 50 8 T 100 8 T 150 8 T 198 8" fill="none" stroke="#FF7AAE" stroke-width="4" stroke-linecap="round"/></svg></span><br>
+          <span class="inline-block bg-cobalt text-white px-3 md:px-4 rounded-lg">전문가가</span><br>직접 찾아옵니다.
         </h1>
         <p class="mt-6 text-base md:text-lg text-ink/65 leading-relaxed max-w-xl mx-auto lg:mx-0">
           수전·전등·하수구·자동차·보험 — 지금 필요한 일, 동네 전문가에게 요청하세요
         </p>
         <div class="mt-9 flex flex-col sm:flex-row items-center lg:items-start gap-4">
-          <a href="#" class="btn-pulse-blue inline-flex items-center gap-2 justify-center px-7 h-14 rounded-full bg-cobalt text-white font-bold text-[16px] hover:bg-pinkAccent transition-colors duration-200 shadow-[0_12px_28px_-8px_rgba(74,125,255,0.5)] w-full sm:w-auto">
-            <span class="w-2 h-2 rounded-full bg-pinkAccent"></span>
-            지금 견적 받기
-          </a>
-          <a href="#" class="inline-flex items-center justify-center px-7 h-14 rounded-full bg-transparent text-cobalt font-bold text-[16px] border-2 border-cobalt hover:text-pinkAccent hover:border-pinkAccent transition-colors duration-200 w-full sm:w-auto">
+          <button class="btn-open-modal btn-pulse-blue inline-flex items-center gap-2 justify-center px-7 h-14 rounded-full bg-cobalt text-white font-bold text-[16px] hover:bg-pinkAccent transition-colors duration-200 shadow-[0_12px_28px_-8px_rgba(74,125,255,0.5)] w-full sm:w-auto">
+            <span class="w-2 h-2 rounded-full bg-pinkAccent"></span>지금 견적 받기
+          </button>
+          <button class="btn-open-partner inline-flex items-center justify-center px-7 h-14 rounded-full bg-transparent text-cobalt font-bold text-[16px] border-2 border-cobalt hover:text-pinkAccent hover:border-pinkAccent transition-colors duration-200 w-full sm:w-auto">
             파트너로 참여하기
-          </a>
-        </div>
-        <div class="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-2 text-[14px] md:text-[15px] text-ink/70">
-          <span>오늘 접수된 요청 <b class="text-cobalt font-bold tabular">12,483</b>건</span>
-          <span class="text-ink/30">·</span>
-          <span>검증된 파트너 <b class="text-cobalt font-bold tabular">8,921</b>명</span>
-          <span class="text-ink/30">·</span>
-          <span>평균 응답 <b class="text-cobalt font-bold tabular">14</b>분</span>
+          </button>
         </div>
       </div>
-
+      
       <div class="w-full lg:w-[45%] flex justify-center lg:justify-end">
-        <div class="relative w-full max-w-[420px] h-[380px] sm:h-[420px] md:h-[460px]">
-          <div class="card-mid absolute left-0 sm:left-[6%] top-[42%] sm:top-[46%] w-[86%] sm:w-[78%] bg-white rounded-2xl shadow-card p-5 md:p-6">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <span class="text-[15px] md:text-[16px] font-extrabold text-ink">정비마스터</span>
-                <svg class="w-[18px] h-[18px] text-cobalt" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.3l2.4 2.4 4.6-5.4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-            </div>
-            <div class="flex items-center gap-1 mt-2">
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-            </div>
-            <div class="h-px border-t border-dashed border-ink/15 my-3"></div>
-            <div class="flex items-baseline gap-1">
-              <span class="text-cobalt font-bold text-sm">₩</span>
-              <span class="text-2xl md:text-[28px] font-black text-ink tabular">510,000</span>
-            </div>
-            <p class="mt-1 text-[13px] text-ink/50">엔진 오일 교환 및 기본 점검</p>
-            <button class="mt-3 px-4 h-9 rounded-full border-2 border-cobalt text-cobalt text-[13px] font-bold hover:bg-cobalt hover:text-white transition-colors">상세보기</button>
-          </div>
-
-          <div class="card-back absolute right-0 top-[22%] sm:top-[24%] w-[80%] sm:w-[72%] bg-white rounded-2xl shadow-card p-5 md:p-6">
-            <div class="flex items-center gap-1.5">
-              <span class="text-[15px] md:text-[16px] font-extrabold text-ink">삼성전기</span>
-              <svg class="w-[18px] h-[18px] text-cobalt" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.3l2.4 2.4 4.6-5.4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="flex items-center gap-1 mt-2">
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-            </div>
-            <div class="h-px border-t border-dashed border-ink/15 my-3"></div>
-            <div class="flex items-baseline gap-1">
-              <span class="text-cobalt font-bold text-sm">₩</span>
-              <span class="text-2xl md:text-[28px] font-black text-ink tabular">425,000</span>
-            </div>
-            <p class="mt-1 text-[13px] text-ink/50">전등 교체 및 차단기 점검</p>
-            <button class="mt-3 px-4 h-9 rounded-full border-2 border-cobalt text-cobalt text-[13px] font-bold hover:bg-cobalt hover:text-white transition-colors">상세보기</button>
-          </div>
-
-          <div class="card-front absolute left-[2%] sm:left-0 top-0 w-[88%] sm:w-[80%] bg-white rounded-2xl shadow-cardHover p-5 md:p-6">
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1.5">
-                <span class="text-[15px] md:text-[16px] font-extrabold text-ink">한강설비</span>
-                <svg class="w-[18px] h-[18px] text-cobalt" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M8.5 12.3l2.4 2.4 4.6-5.4" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <span class="px-2.5 py-1 rounded-full bg-pinkAccent text-white text-[11px] font-bold tracking-wide">HOT</span>
-            </div>
-            <div class="flex items-center gap-1 mt-2">
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-              <svg class="w-4 h-4 text-pinkAccent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.9 6.4 7 .7-5.3 4.7 1.6 6.9L12 17l-6.2 3.7 1.6-6.9L2.1 9.1l7-.7L12 2z"/></svg>
-            </div>
-            <div class="h-px border-t border-dashed border-ink/15 my-3"></div>
-            <div class="flex items-baseline gap-1">
-              <span class="text-cobalt font-bold text-sm">₩</span>
-              <span class="text-2xl md:text-[28px] font-black text-ink tabular">380,000</span>
-            </div>
-            <p class="mt-1 text-[13px] text-ink/50">싱크대 배관 교체 및 누수 점검</p>
-            <button class="mt-3 px-4 h-9 rounded-full border-2 border-cobalt text-cobalt text-[13px] font-bold hover:bg-cobalt hover:text-white transition-colors">상세보기</button>
+        <div class="relative w-full max-w-[420px] h-[380px] sm:h-[420px]">
+          <div class="card-front absolute left-0 top-0 w-full bg-white rounded-2xl shadow-card p-6">
+            <span class="text-cobalt font-bold text-sm">MATCHING PLATFORM</span>
+            <h2 class="text-2xl font-black text-ink mt-2">동네 인프라와 소비자를 직접 연결합니다.</h2>
+            <p class="text-ink/60 mt-2 text-sm">복잡한 절차 없이 간편하게 요청서를 보내고 주변 전문가의 실시간 매칭 견적을 받아보세요.</p>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="mt-20 md:mt-24 grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 max-w-xl mx-auto lg:mx-0 lg:max-w-none">
-      <a href="#" class="flex items-center justify-center lg:justify-start gap-2.5 bg-white border border-cobalt/70 rounded-3xl px-5 h-14 hover:shadow-card transition-shadow">
-        <svg class="w-5 h-5 text-cobalt shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/></svg>
-        <span class="text-[14px] md:text-[15px] font-semibold text-ink whitespace-nowrap">집수리</span>
-      </a>
-      <a href="#" class="flex items-center justify-center lg:justify-start gap-2.5 bg-white border border-cobalt/70 rounded-3xl px-5 h-14 hover:shadow-card transition-shadow">
-        <svg class="w-5 h-5 text-cobalt shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-3.2a2 2 0 0 1 1.3-1.9l1.6-.6 1.4-3a2 2 0 0 1 1.8-1.1h3.8a2 2 0 0 1 1.8 1.1l1.4 3 1.6.6A2 2 0 0 1 20 12.8V16"/><path d="M4 16h16v2a1 1 0 0 1-1 1h-1.5a1 1 0 0 1-1-1v-1H7.5v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2Z"/><circle cx="7.5" cy="16" r="1.4"/><circle cx="16.5" cy="16" r="1.4"/></svg>
-        <span class="text-[14px] md:text-[15px] font-semibold text-ink whitespace-nowrap">자동차</span>
-      </a>
-      <a href="#" class="flex items-center justify-center lg:justify-start gap-2.5 bg-white border border-pinkAccent/70 rounded-3xl px-5 h-14 hover:shadow-card transition-shadow">
-        <svg class="w-5 h-5 text-pinkAccent shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3Z"/><path d="M10 12h4M12 10v4" stroke-linecap="round"/></svg>
-        <span class="text-[14px] md:text-[15px] font-semibold text-ink whitespace-nowrap">보험 토너먼트</span>
-      </a>
     </div>
   </div>
 </section>
 
-<section class="reveal bg-white py-12 md:py-16 lg:py-24">...</section>
-<div class="diag-divider" style="background:#FFFFFF;">...</div>
-<section class="reveal dark-section relative bg-ink py-12 md:py-16 lg:py-24 overflow-hidden">...</section>
-<div class="diag-divider" style="background:#1B2340;">...</div>
-<section class="reveal bg-bg py-12 md:py-16 lg:py-24">...</section>
-<div class="diag-divider" style="background:#FFFFFF;">...</div>
-<section class="reveal dark-section relative bg-cobalt py-12 md:py-16 lg:py-24 overflow-hidden">...</section>
-<div class="diag-divider" style="background:#4A7DFF;">...</div>
-<section class="reveal relative bg-white py-12 md:py-16 lg:py-24 overflow-hidden">...</section>
-<div class="diag-divider" style="background:#FFFFFF;">...</div>
-<section class="reveal dark-section relative bg-ink py-12 md:py-16 lg:py-24 overflow-hidden">...</section>
-<div class="diag-divider" style="background:#1B2340;">...</div>
-<section class="reveal relative bg-cobalt py-16 md:py-20 lg:py-28 overflow-hidden">...</section>
-<footer class="bg-ink py-14 md:py-16">...</footer>
+<div id="requestModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+  <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden p-6 md:p-8 animate-fade-in relative">
+    <button id="btnCloseModal" class="absolute top-4 right-4 text-ink/40 hover:text-ink text-2xl font-bold">&times;</button>
+    
+    <h3 id="modalTitle" class="text-2xl font-black text-ink tracking-tight">📋 맞춤 견적 요청하기</h3>
+    <p class="text-sm text-ink/60 mt-1">3분 만에 작성하고 최고 기사님들의 견적을 받아보세요.</p>
+    
+    <form id="modalForm" class="mt-6 space-y-4">
+      <div id="categoryGroup">
+        <label class="block text-sm font-bold text-ink mb-1.5">필요한 대분야 선택</label>
+        <select id="userCategory" class="w-full h-12 px-3 border-2 border-[#DCE9FF] rounded-xl focus:border-cobalt focus:outline-none text-sm font-medium">
+          <option value="집수리">🔧 집수리 (수전, 전기, 하수구 등)</option>
+          <option value="자동차">🚗 자동차 (덴트, 도색, 수리 등)</option>
+          <option value="보험">🏆 보험 토너먼트 (익명 견적 비교)</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-bold text-ink mb-1.5">고객명 / 업체명</label>
+        <input type="text" id="modalName" placeholder="이름을 입력해주세요" required class="w-full h-12 px-3 border-2 border-[#DCE9FF] rounded-xl focus:border-cobalt focus:outline-none text-sm">
+      </div>
+
+      <div>
+        <label class="block text-sm font-bold text-ink mb-1.5">연락처</label>
+        <input type="tel" id="modalPhone" placeholder="숫자만 입력해주세요 (- 제외)" required class="w-full h-12 px-3 border-2 border-[#DCE9FF] rounded-xl focus:border-cobalt focus:outline-none text-sm">
+      </div>
+
+      <div>
+        <label class="block text-sm font-bold text-ink mb-1.5">상세 요청/소개 내용</label>
+        <textarea id="modalDetails" rows="3" placeholder="예) 싱크대 수전 교체 비용 문의합니다 / 수리 경력 10년 정비소입니다" required class="w-full p-3 border-2 border-[#DCE9FF] rounded-xl focus:border-cobalt focus:outline-none text-sm resize-none"></textarea>
+      </div>
+
+      <button type="submit" class="w-full h-13 bg-cobalt text-white font-bold rounded-xl hover:bg-pinkAccent transition-colors duration-200 text-base shadow-lg">
+        🚀 즉시 등록 신청하기
+      </button>
+    </form>
+  </div>
+</div>
 
 <script>
-  // 기존 디자인 효과 스크립트 코드 (생략)
-  const header = document.getElementById('siteHeader');
-  // ...기존 애니메이션 로직...
-</script>
-
-<script>
-  // 1. 수파베이스 연결 설정
+  // 1. 수파베이스 설정 정보
   const SUPABASE_URL = 'https://jtoujsntxxqxsynsanxz.supabase.co'; 
   const SUPABASE_ANON_KEY = 'sb_publishable_BQmz1lOWrsYqkePwEZhiBg_mM8CARh6';
 
-  // 2. 수파베이스 클라이언트 초기화
+  // 2. 수파베이스 연결 초기화
   const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-  // 3. 데이터베이스에 정보를 저장하는 공통 함수
-  async function registerUser(roleName, roleKorean) {
-    // 사용자에게 이름과 연락처를 간단히 입력받습니다.
-    const userName = prompt(`${roleKorean} 등록을 위해 '이름'을 입력해주세요:`);
-    if (!userName) return; // 취소 누르면 중단
+  // 현재 열려있는 가입 형태 추적용 변수 ('client' 또는 'partner')
+  let currentRole = 'client';
 
-    const userPhone = prompt(`'연락처(- 제외)'를 입력해주세요:`);
-    if (!userPhone) return; // 취소 누르면 중단
+  // 3. 모달 제어 엘리먼트 정의
+  const requestModal = document.getElementById('requestModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const categoryGroup = document.getElementById('categoryGroup');
+  const modalForm = document.getElementById('modalForm');
 
-    // 수파베이스 'users' 테이블에 데이터 삽입(Insert)
-    const { data, error } = await supabaseClient
-      .from('users')
-      .insert([
-        { name: userName, phone: userPhone, role: roleName }
-      ])
-      .select();
-
-    if (error) {
-      alert('등록 중 오류가 발생했습니다: ' + error.message);
-      console.error('에러 상세:', error);
-    } else {
-      alert(`🎉 성공적으로 ${roleKorean} 등록이 완료되었습니다!\n대시보드에서 확인해보세요.`);
-      console.log('저장된 데이터:', data);
-    }
+  // 모달 열기 함수 (고객용)
+  function openClientModal() {
+    currentRole = 'client';
+    modalTitle.innerText = '📋 맞춤 견적 요청하기';
+    categoryGroup.style.display = 'block'; // 분야 선택 보여주기
+    requestModal.classList.remove('hidden');
   }
 
-  // 4. HTML 문서가 다 로딩된 후 버튼에 이벤트 연결
+  // 모달 열기 함수 (파트너 기사님용)
+  function openPartnerModal() {
+    currentRole = 'partner';
+    modalTitle.innerText = '🛠️ 기사님 파트너 등록 신청';
+    categoryGroup.style.display = 'none'; // 파트너는 분야 선택 숨김
+    requestModal.classList.remove('hidden');
+  }
+
+  // 모달 닫기 함수
+  function closeModal() {
+    requestModal.classList.add('hidden');
+    modalForm.reset(); // 입력창 초기화
+  }
+
+  // 4. 모달창 이벤트 리스너 연결
+  document.getElementById('btnCloseModal').addEventListener('click', closeModal);
+  requestModal.addEventListener('click', (e) => { if(e.target === requestModal) closeModal(); });
+
   document.addEventListener('DOMContentLoaded', () => {
-    
-    // ① "지금 견적 받기" (고객용 버튼들) 태그 매칭
-    // 메인 화면의 대형 푸른색 버튼과 최종 CTA 구역의 버튼을 모두 찾아서 기능을 연결합니다.
-    const clientButtons = document.querySelectorAll('a[href="#"]');
-    
-    clientButtons.forEach(btn => {
+    // 사이트 전역의 '견적 받기' 및 '무료 시작하기' 버튼 연동
+    document.querySelectorAll('.btn-open-modal').forEach(btn => {
+      btn.addEventListener('click', (e) => { e.preventDefault(); openClientModal(); });
+    });
+    // 홈 화면의 '견적 받기' 링크 텍스트 버튼도 추가 연동
+    document.querySelectorAll('a[href="#"]').forEach(btn => {
       if (btn.innerText.includes('견적 받기')) {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault(); // 기본 링크 이동 막기
-          registerUser('client', '일반 고객 견적 요청');
-        });
+        btn.addEventListener('click', (e) => { e.preventDefault(); openClientModal(); });
       }
-      
-      if (btn.innerText.includes('파트너로 참여') || btn.innerText.includes('파트너 등록') || btn.innerText.includes('파트너 참여')) {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault(); // 기본 링크 이동 막기
-          registerUser('partner', '전문가 파트너');
-        });
+      if (btn.innerText.includes('파트너')) {
+        btn.addEventListener('click', (e) => { e.preventDefault(); openPartnerModal(); });
+      }
+    });
+
+    // 파트너 참여하기 전용 버튼 연동
+    document.querySelectorAll('.btn-open-partner').forEach(btn => {
+      btn.addEventListener('click', (e) => { e.preventDefault(); openPartnerModal(); });
+    });
+
+    // 5. 폼 전송 이벤트 처리 (수파베이스로 데이터 쏘기)
+    modalForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nameVal = document.getElementById('modalName').value;
+      const phoneVal = document.getElementById('modalPhone').value;
+      const detailsVal = document.getElementById('modalDetails').value;
+      const categoryVal = currentRole === 'client' ? document.getElementById('userCategory').value : '전문가 파트너';
+
+      // 수파베이스 테이블에 최종 인서트
+      const { data, error } = await supabaseClient
+        .from('users')
+        .insert([
+          { 
+            name: nameVal, 
+            phone: phoneVal, 
+            role: currentRole, 
+            category: categoryVal, 
+            details: detailsVal 
+          }
+        ]);
+
+      if (error) {
+        alert('등록 중 에러가 발생했습니다: ' + error.message);
+      } else {
+        alert('🎉 신청이 완벽하게 접수되었습니다!\n감사합니다.');
+        closeModal();
+        // 화면 리프레시로 테이블 갱신 유도
+        window.location.reload();
       }
     });
   });
+
+  // 모바일 햄버거 토글 버튼 로직
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  let menuOpen = false;
+  menuBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+      mobileMenu.style.opacity = '1';
+    } else {
+      mobileMenu.style.maxHeight = '0px';
+      mobileMenu.style.opacity = '0';
+    }
+  });
 </script>
-
-
 </body>
 </html>
